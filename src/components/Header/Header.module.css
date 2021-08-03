@@ -1,0 +1,129 @@
+.header__area {
+  height: 87vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header__content {
+  background-color: #eee;
+}
+
+.header__area h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  text-shadow: 2px 2px #5e17eb;
+  font-size: 72px;
+  position: relative;
+  text-transform: uppercase;
+}
+.header__area h1::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #5e17eb;
+  overflow: hidden;
+  position: absolute;
+  content: attr(data-text);
+  border-right: 2px solid #5e17eb;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+.header__area p {
+  font-size: 18px;
+  letter-spacing: 2.3px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: 500;
+  margin: 30px 0;
+}
+
+.join__btn {
+  background-color: var(--main-color);
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 25px;
+  margin-right: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.join__btn:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #5e17ebda;
+}
+
+.login__btn {
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 25px;
+  margin-right: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.login__btn:hover {
+  background-color: rgba(0, 0, 0, 0.856);
+}
+
+/* ============= responsive =========== */
+@media screen and (max-width: 1200px) {
+  .header__area h1 {
+    font-size: 50px;
+  }
+
+  .header__area {
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__area h1 {
+    font-size: 40px;
+  }
+  .header__area p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header__area h1 {
+    font-size: 25px;
+  }
+  .header__area p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header__area h1 {
+    font-size: 20px;
+  }
+  .header__area p {
+    font-size: 13px;
+  }
+
+  .header__area{
+    height: 100vh;
+  }
+
+  .btns{
+    display: flex;
+    flex-direction: column;
+  }
+  .join__btn{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

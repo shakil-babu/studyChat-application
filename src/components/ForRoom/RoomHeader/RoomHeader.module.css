@@ -1,0 +1,85 @@
+.header{
+    padding: 14px 20px;
+    background-color: #eee;
+}
+
+.header__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+}
+.show__btn{
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+.left img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.right{
+    display: flex;
+    align-items: center;
+}
+.right button{
+    background-color: #5e17eb;
+    color: #fff;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    text-transform: capitalize;
+
+}
+.right button:hover{
+    opacity: .8;
+}
+.call__icon{
+    font-size: 25px;
+    padding: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all ease-out .4s;
+}
+.call__icon:hover{
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+/* =============== responsive =========== */
+@media screen and (max-width:430px){
+   .left img{
+       height: 30px;
+       width: 30px;
+   }
+   .left div h4{
+       font-size: 12px;
+   }
+   .left div button{
+       font-size: 10px;
+   }
+   .call__icon{
+       font-size: 16px;
+       margin-right: 5px;
+   }
+
+   .right button{
+     padding: 8px;
+     text-transform: capitalize;
+     border: none;
+     outline: none;  
+     cursor: pointer;
+     font-size: 10px;
+   }
+    
+}

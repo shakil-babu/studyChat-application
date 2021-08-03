@@ -1,0 +1,66 @@
+
+.message_area{
+    padding: 10px 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 50vh;
+}
+
+.message_content{
+
+}
+
+
+
+
+/* ============================ single message ============================ */
+
+.single_message{
+    margin-bottom: 20px;
+}
+
+.message_flex{
+    display: flex;
+    
+}
+.message_flex div{
+    margin-left: 8px;
+}
+.message_flex img{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+.message_flex div h4{
+    background-color: #5e17eb8f;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.925);
+    font-size: 14px;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+}
+
+/* ================ current user ========== */
+
+.current_user_msg_flex{
+    display: flex;
+    justify-content: right !important;
+
+}
+.current_user_msg_flex img{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-top: 16px;
+    margin-left: 5px;
+}
+
+.current_user_msg_flex h4{
+    background-color: #36404a;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.925);
+    font-size: 14px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+}

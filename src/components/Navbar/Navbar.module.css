@@ -1,0 +1,124 @@
+.navbar{
+    padding: 10px 0;
+    border-bottom: 1.2px solid lightgray;
+}
+.navbar__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+
+.navbar img{
+    height: 60px;
+}
+.navbar__links{
+    display: flex;
+    align-items: center;
+}
+
+.navbar__links a{
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    color: #000;
+}
+.navbar__links a:hover{
+    color: var(--main-color);
+}
+.join__btn{
+    background-color: var(--main-color);
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.join__btn:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color:#5e17ebda;
+}
+
+
+/* ============================= Mobile nav ================ */
+.mobile__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.842);
+    padding: 10px;
+}
+
+.mobile__nav__links{
+    display: flex;
+    flex-direction: column;
+
+}
+.mobile__nav__links a{
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.mobile__nav__links a:hover{
+    color: var(--main-color);
+}
+.bar_icon{
+    font-size: 25px;
+    color: var(--main-color);
+    cursor: pointer;
+    margin-bottom: 15px;
+
+}
+.cross_icon{
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+    margin-bottom: 15px;
+
+}
+.d_flex{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+    align-items: center;
+}
+
+/* responsive */
+
+@media screen and (max-width:992px){
+    .navbar img{
+        height: 45px;
+    }
+    .navbar__links a{
+        font-size: 14px;
+    }
+    .join__btn{
+        font-size: 10px;
+    }
+    .btn{
+        padding: 10px 20px;
+    }
+}
+
+
+@media screen and (max-width:768px){
+    .navbar__content{
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width:768px){
+    .mobile__nav{
+        display: none;
+    }
+    .d_flex{
+        display: none;
+    }
+}

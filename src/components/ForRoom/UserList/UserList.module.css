@@ -1,0 +1,88 @@
+.usersList__area {
+  padding: 10px 20px;
+  height: 83.9vh;
+  border-right: 1px solid #999;
+  transition: all ease 3s;
+}
+
+.left__arrow{
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--main-color);
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: all ease-in-out .5s;
+}
+.left__arrow:hover{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  opacity: 0.8;
+}
+.usersList__area h1 {
+  font-size: 25px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.search__box {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 8px;
+  align-items: center;
+}
+.search__icon {
+  font-size: 18px;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.search__box input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+/* ============ recent users ========== */
+.recent__users {
+  margin-top: 20px;
+}
+.recent__users h2 {
+  font-size: 20px !important;
+  padding: 8px 0;
+  border-bottom: 1px solid #999;
+}
+
+.all__recent__users {
+  height: 300px;
+  overflow-y: scroll;
+  padding: 20px 0;
+}
+
+.single__user {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  cursor: pointer;
+  transition: all ease .8s;
+  
+}
+
+.single__user img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.user__info {
+  margin-left: 15px;
+}
+.user__info p{
+    font-size: 13px;
+    color: #888;
+}
+
+.single__user:hover{
+    background-color: #fff;
+}

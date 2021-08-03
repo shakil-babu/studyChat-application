@@ -1,0 +1,46 @@
+
+.footer {
+  text-align: center;
+  position: relative;
+}
+.footer__content{
+    background-color: #000b76;
+    margin-top: -20px;
+    padding-bottom: 40px;
+    color:#fff;
+}
+.footer h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 2.4px;
+}
+.footer h3{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.footer p{
+    font-size: 15px;
+    padding: 5px 0;
+    text-transform: capitalize;
+}
+
+.copyright{
+    text-transform: uppercase !important;
+}
+
+
+@media screen and (max-width:576px){
+    .footer h1{
+        font-size: 17px;
+    }
+    .footer h3{
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    .footer p{
+        font-size: 12px;
+        padding: 0 20px;
+    }
+}

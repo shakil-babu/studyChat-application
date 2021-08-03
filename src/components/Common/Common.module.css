@@ -1,0 +1,52 @@
+
+.common{
+    padding: 80px 0;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content__info{
+    width: 50%;
+    margin-left: 20px;
+}
+.content__info h1{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+
+}
+.content__info p{
+    font-family: monospace;
+    font-size: 17px;
+    margin-top: 15px;
+    line-height: 27px;
+}
+
+.content img{
+    width: 50%;
+}
+
+@media screen and (max-width:1200px){
+    .content__info h1{
+        font-size: 25px;
+    }
+    .content__info p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:768px){
+   
+    .content img {
+        display: none;
+    }
+    .content__info{
+        width: 100%;
+        text-align: center;
+    }
+}
