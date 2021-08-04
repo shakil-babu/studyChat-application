@@ -7,12 +7,11 @@ const JoinRequest = () => {
       <h1>JOIN REQUEST</h1>
         <main className={style.content}>
           <p>
-            Are you ready to join with us ? Then, send your valid email we'll
+            Are you ready to join with us ? Then, send your valid info click the button below. we'll
             approve you so far as we can.
           </p>
           <div className={style.input__flex}>
-            <input type="email" placeholder="email" />
-            <button className={`btn ${style.send__btn}`}>Send</button>
+            <button className={`btn ${style.send__btn}`}>Click me for join</button>
           </div>
         </main>
       </section>

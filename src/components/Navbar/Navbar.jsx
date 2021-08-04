@@ -25,7 +25,7 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
 
           <div className={style.navbar__links}>
-            <NavLink activeStyle={activeStyle} exact to="/home">
+            <NavLink activeStyle={activeStyle} exact to="/">
               Home
             </NavLink>
             <NavLink activeStyle={activeStyle} to="/room">
@@ -93,7 +93,7 @@ const Navbar = () => {
           {isNav && (
             <article className={style.mobile__nav}>
               <div className={style.mobile__nav__links}>
-                <NavLink activeStyle={navStyle} exact to="/home">
+                <NavLink activeStyle={navStyle} exact to="/">
                   Home
                 </NavLink>
                 <NavLink activeStyle={navStyle} to="/room">
