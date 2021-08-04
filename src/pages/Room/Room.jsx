@@ -19,7 +19,7 @@ const Room = () => {
           setShow(true)
       }
    })
-  },[window])
+  },[])
   return (
     <>
       <section className={` ${style.room__wrapper}`}>

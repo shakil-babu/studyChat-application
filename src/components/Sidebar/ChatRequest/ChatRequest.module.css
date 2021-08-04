@@ -1,0 +1,57 @@
+.ChatRequest{
+
+}
+
+.ChatRequest h1{
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.ChatRequest p{
+    font-size: 15px;
+
+}
+
+.request__area{
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.user{
+    width: 200px;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    background-color:#382a71;
+    color: #fff ;
+}
+.user img{
+    height: 40px;
+    width: 40px;
+    border-radius:50%;
+    margin-right: 12px;
+}
+
+.user__action div{
+    display: flex;
+}
+.user__action h4{
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.user__action div button{
+    margin-right: 5px;
+    cursor: pointer;
+
+}
+
+
+@media screen and (max-width:768px){
+    .ChatRequest h1{
+        font-size: 20px;
+        display: block;
+    }
+}

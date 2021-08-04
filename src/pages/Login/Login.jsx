@@ -1,10 +1,10 @@
 import style from "./Login.module.css";
 import { FaGoogle } from "react-icons/fa";
 import Footer from "../../components/Footer/Footer";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import "firebase/auth";
 import { useHistory, useLocation } from "react-router-dom";
-import { firebaseApp } from "../../utilities/firebase";
+import { frirebaseConfig } from "../../utilities/firebase";
 import { useContext, useState } from "react";
 import { UserContext } from "../../App";
 
@@ -14,9 +14,9 @@ const Login = () => {
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
 
-  if (firebase.apps.length === 0) {
-    firebaseApp();
-  }
+  if(firebase.apps.length === 0){
+    firebase.initializeApp(frirebaseConfig);
+}
 
   // google sign in
   const handleGoogleSignIn = () => {
@@ -25,8 +25,8 @@ const Login = () => {
       .auth()
       .signInWithPopup(provider)
       .then(function (result) {
-        const { displayName, email } = result.user;
-        const signedInUser = { name: displayName, email };
+        const { displayName, email,photoURL } = result.user;
+        const signedInUser = { name: displayName, email:email, img:photoURL};
         setLoggedInUser(signedInUser);
         history.replace(from);
         // ...

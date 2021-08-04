@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { fakeUsers } from '../../../utilities/fake';
 import style from './Messages.module.css';
 import SingleMessage from './SingleMessage';

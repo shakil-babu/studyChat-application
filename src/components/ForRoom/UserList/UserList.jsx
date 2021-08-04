@@ -1,10 +1,28 @@
 import style from "./UserList.module.css";
 import { BsSearch } from "react-icons/bs";
-import { fakeUsers } from "../../../utilities/fake";
 import { GoPrimitiveDot } from "react-icons/go";
 import { CgChevronDoubleLeftR } from "react-icons/cg";
+import { useEffect, useState } from "react";
+import { db } from "../../../utilities/firebase";
 
 const UserList = ({show, setShow}) => {
+
+  const [members, setMembers] = useState([]);
+    // get intersted users
+    useEffect(() => {
+      db.collection("chat-members")
+        .orderBy("timestamp", "desc")
+        .onSnapshot((snapshop) => {
+          setMembers(
+            snapshop.docs.map((doc) => ({
+              id: doc.id,
+              name: doc.data().name,
+              img: doc.data().img,
+              email: doc.data().email,
+            }))
+          );
+        });
+    }, []);
 
   return (
     <>
@@ -20,17 +38,16 @@ const UserList = ({show, setShow}) => {
         <div className={style.recent__users}>
           <h2>Recent</h2>
           <div className={style.all__recent__users}>
-            {fakeUsers.map((user) => {
+            {members.map((user) => {
               return (
                 <div className={style.single__user}>
                   <img src={user.img} alt="img" />
 
                   <div className={style.user__info}>
                     <h4>
-                      {user.name}{" "}
+                      {user.name}
                       <GoPrimitiveDot className={style.dot__icons} />
                     </h4>
-                    <p>{user.msg}</p>
                   </div>
                 </div>
               );

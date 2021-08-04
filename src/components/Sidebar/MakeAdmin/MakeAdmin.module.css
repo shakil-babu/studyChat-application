@@ -1,0 +1,157 @@
+
+
+.MakeAdmin__section{
+    text-align: left;
+}
+.MakeAdmin__section h2{
+    text-transform: uppercase;
+    color: #5e17eb;
+    margin-bottom: 10px;
+
+}
+
+.MakeAdmin__section form{
+    display: flex;
+    background-color: #fff;
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.MakeAdmin__section form input{
+    flex:1;
+    padding: 10px;
+}
+
+.MakeAdmin__section form button{
+    flex:0;
+    margin-left: 10px;
+    background-color: #5e17eb;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.MakeAdmin__section form button:hover{
+    opacity: 0.8;
+}
+
+.success{
+    color: green;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 12px;
+}
+/* ======================= all admins style ======================= */
+
+.all__admins{
+    height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.all__admins h1{
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--main-color);
+    margin-bottom: 15px;
+}
+.main{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.admin{
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+.admin:hover{
+    opacity: .8;
+}
+
+.admin__flex{
+    display: flex;
+    align-items: center;
+}
+
+.update{
+    background-color: indigo;
+    color: #fff;
+}
+.delete{
+    background-color: rgba(194, 15, 15, 0.863);
+    color: #fff;
+}
+.update:hover, .delete:hover{
+    opacity: 0.8;
+}
+
+.edit__area{
+    padding: 8px;
+}
+.edit__area input{
+    padding: 8px;
+    margin-right: 8px;
+}
+
+.edit__area button{
+    background-color: green;
+    color: #fff;
+}
+.edit__area button:hover{
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media  screen and (max-width:768px) {
+    .MakeAdmin__section form{
+        flex-direction: column;
+    }
+    .MakeAdmin__section form button{
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    .MakeAdmin__section h2{
+        font-size: 16px;
+    }
+
+    .admin{
+        flex-direction: column;
+    }
+    .admin h4{
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    .update, .delete{
+        padding: 5px !important;
+    }
+
+    .all__admins h1{
+        font-size: 15px;
+    }
+}

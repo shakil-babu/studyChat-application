@@ -1,7 +1,49 @@
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { AdminsContext, MembersContext } from "../../App";
+import { db } from "../../utilities/firebase";
 import style from "./Header.module.css";
 
 const Header = () => {
+
+  const [allAdmins, setAlladmins] = useContext(AdminsContext);
+
+  // get intersted users
+  useEffect(() => {
+    db.collection("admins")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshop) => {
+        setAlladmins(
+          snapshop.docs.map((doc) => ({
+            id: doc.id,
+            email: doc.data().email,
+          }))
+        );
+      });
+  }, []);
+
+
+
+
+
+
+   // members context
+   const [members, setMembers] = useContext(MembersContext);
+   // get intersted users
+   useEffect(() => {
+     db.collection("chat-members")
+       .orderBy("timestamp", "desc")
+       .onSnapshot((snapshop) => {
+         setMembers(
+           snapshop.docs.map((doc) => ({
+             id: doc.id,
+             name: doc.data().name,
+             img: doc.data().img,
+             email: doc.data().email,
+           }))
+         );
+       });
+   }, []);
   return (
     <div className={` ${style.header__content}`}>
       <main className={` ${style.header__area} container`}>
