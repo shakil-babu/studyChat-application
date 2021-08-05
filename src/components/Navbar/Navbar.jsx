@@ -5,7 +5,6 @@ import { RiBarChartHorizontalFill } from "react-icons/ri";
 import { ImCross } from "react-icons/im";
 import { useContext, useState } from "react";
 import { AdminsContext, MembersContext, UserContext } from "../../App";
-import { db } from "../../utilities/firebase";
 const Navbar = () => {
   const activeStyle = {
     borderTop: "1px solid #5e17eb",
@@ -65,13 +64,20 @@ const Navbar = () => {
           </div>
 
           <div className={style.btn__flex}>
-            <Link to="/join">
-              <button className={`btn ${style.join__btn}`}>Join Request</button>
-            </Link>
+            {!isMember && (
+              <Link to="/join">
+                <button className={`btn ${style.join__btn}`}>
+                  Join Request
+                </button>
+              </Link>
+            )}
 
             {loggedInUser.name && (
               <div className={style.logout__flex}>
-                <button onClick={() => setLoggedInUser({})} className={`btn ${style.log__out}`}>
+                <button
+                  onClick={() => setLoggedInUser({})}
+                  className={`btn ${style.log__out}`}
+                >
                   Log out <small>({loggedInUser.name})</small>{" "}
                 </button>
               </div>
@@ -121,15 +127,20 @@ const Navbar = () => {
                 )}
               </div>
               <div className={style.btn__flex}>
-                <Link to="/join">
-                  <button className={`btn ${style.join__btn}`}>
-                    Join Request
-                  </button>
-                </Link>
+                {!isMember && (
+                  <Link to="/join">
+                    <button className={`btn ${style.join__btn}`}>
+                      Join Request
+                    </button>
+                  </Link>
+                )}
 
                 {loggedInUser.name && (
                   <div className={style.logout__flex}>
-                    <button onClick={() => setLoggedInUser({})} className={`btn ${style.log__out}`}>
+                    <button
+                      onClick={() => setLoggedInUser({})}
+                      className={`btn ${style.log__out}`}
+                    >
                       Log out <small>({loggedInUser.name})</small>{" "}
                     </button>
                   </div>

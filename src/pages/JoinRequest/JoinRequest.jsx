@@ -1,10 +1,10 @@
 import style from "./JoinRequest.module.css";
 import Footer from "../../components/Footer/Footer";
 import { useContext, useState } from "react";
-import { UserContext } from "../../App";
-import {AiOutlineCheck} from 'react-icons/ai';
+import { MembersContext, UserContext } from "../../App";
+import { AiOutlineCheck } from "react-icons/ai";
 import { db } from "../../utilities/firebase";
-import firebase from 'firebase';
+import firebase from "firebase";
 
 const JoinRequest = () => {
   // current user from context
@@ -13,35 +13,47 @@ const JoinRequest = () => {
 
   // user join request handler
   const JoinRequHandler = () => {
-    db.collection('join-requests').add({
-      name:loggedInUser.name,
-      img:loggedInUser.img,
-      email:loggedInUser.email,
-      timestamp:firebase.firestore.FieldValue.serverTimestamp()
+    db.collection("join-requests").add({
+      name: loggedInUser.name,
+      img: loggedInUser.img,
+      email: loggedInUser.email,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
     setIsSent(true);
-  }
+  };
+
+  // all chat members context
+  const [members, setMembers] = useContext(MembersContext);
+  const isMember = members.find((item) =>
+    item.email === loggedInUser.email ? true : false
+  );
 
   return (
     <>
       <section className={`container ${style.join_reques_area}`}>
-      <h1>JOIN REQUEST</h1>
+        <h1>JOIN REQUEST</h1>
         <main className={style.content}>
           <p>
-            Are you ready to join with us ? Then, send your valid info click the button below. we'll
-            approve you so far as we can.
+            Are you ready to join with us ? Then, send your valid info click the
+            button below. we'll approve you so far as we can.
           </p>
           <div className={style.input__flex}>
-            {
-              isSent ? (
-                <button className={`btn`} style={{color:"green"}}> <AiOutlineCheck className={style.check} /> Your request has been sent.</button>
-              ):(
-                <button onClick={JoinRequHandler} className={`btn ${style.send__btn}`}>Click me for join</button>
-              )
-            }
+            {isSent ? (
+              <button className={`btn`} style={{ color: "green" }}>
+                {" "}
+                <AiOutlineCheck className={style.check} /> Your request has been
+                sent.
+              </button>
+            ) : (
+              <button
+                onClick={JoinRequHandler}
+                className={`btn ${style.send__btn}`}
+              >
+                Click me for join
+              </button>
+            )}
           </div>
-
         </main>
       </section>
 

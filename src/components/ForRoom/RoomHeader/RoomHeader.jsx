@@ -2,20 +2,20 @@ import style from "./RoomHeader.module.css";
 import { GoPrimitiveDot } from "react-icons/go";
 import { MdCall } from "react-icons/md";
 import { BsFillCameraVideoFill } from "react-icons/bs";
-import { singleUser } from "../../../utilities/fake";
+import { useContext } from "react";
+import { UserContext } from "../../../App";
 
 const RoomHeader = ({show, setShow}) => {
-  const { name, img } = singleUser;
-
+  const  [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
     <>
       <section className={style.header}>
         <main className={style.header__content}>
           <div className={style.left}>
-            <img src={img} alt="img" />
+            <img src={loggedInUser.img} alt="img" />
             <div>
               <h4>
-                {name} <GoPrimitiveDot />
+                {loggedInUser.name} <GoPrimitiveDot className={style.active} />
               </h4>
               {!show && (
                 <button onClick={() => setShow(true)} className={style.show__btn}>show sidebar</button>
@@ -26,7 +26,6 @@ const RoomHeader = ({show, setShow}) => {
           <div className={style.right}>
             <MdCall className={style.call__icon} />
             <BsFillCameraVideoFill className={style.call__icon} />
-            <button>sign out</button>
           </div>
         </main>
       </section>

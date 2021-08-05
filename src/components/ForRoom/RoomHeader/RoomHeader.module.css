@@ -55,6 +55,9 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.active{
+    color:limegreen;
+}
 
 /* =============== responsive =========== */
 @media screen and (max-width:430px){
